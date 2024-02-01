@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# production
+build/**/*
+dist/**/*
+final/**/*
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.eslintcache
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# typescript
+*.tsbuildinfo
+
+# jetbrains
+.idea/modules.xml
+.idea/vcs.xml
+.idea/launcher.iml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/codeStyles/Project.xml
+.idea/codeStyles/codeStyleConfig.xml
