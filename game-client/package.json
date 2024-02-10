@@ -1,41 +1,46 @@
 {
-  "name": "invaders",
-  "version": "1.0.0",
+  "name": "woad-wash-world-client",
+  "version": "0.0.0",
+  "description": "Woad Wash World Game Client",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "https://github.com/JustinLloyd/woad-wash-worldgit .git"
   },
-  "scripts": {
-    "start": "parcel serve ./game-server/src/html/www.html",
-    "build": "parcel build ./game-server/src/html/www.html --public-url=./ --no-content-hash --dist-dir final --no-optimize --detailed-report",
-    "watch": "parcel watch ./src/html/wwww.html",
-    "prebuild": "rimraf ./final"
-  },
   "file": [
-    "game-client/src/scripts/",
-    "game-client/src/css/",
-    "game-client/src/html/**/*",
-    "game-client/src/assets/**/*",
-    "game-server/src/scripts/",
+    "src/scripts/",
+    "src/css/",
+    "src/html/**/*",
+    "src/assets/**/*",
+
     "build/",
     "dist/"
   ],
   "dependencies": {
-    "systemjs": "^6.10.2",
-    "typescript": "^4.3.5",
-    "@pixi/canvas-renderer": "^6.1.1",
+    "systemjs": "^6.14.3",
+    "typescript": "next",
+    "@pixi/canvas-renderer": "^7.4.0",
     "@types/gsap": "^3.0.0",
-    "@types/jquery": "^3.5.6",
-    "eventemitter3": "^4.0.7",
-    "gsap": "^3.7.1",
+    "@types/jquery": "^3.5.29",
+    "eventemitter3": "^5.0.1",
+    "gsap": "^3.12.5",
     "inline-scripts": "^1.7.4",
-    "jquery": "^3.6.0",
-    "pixi-filters": "^4.1.4",
-    "pixi.js": "^6.0.4"
+    "jquery": "^3.7.1",
+    "@pixi/app": "^7.4.0",
+    "@pixi/sound": "^5.2.2",
+    "pixi-filters": "^5.2.1",
+    "pixi.js": "^8.0.0-rc.6",
+    "pixi3d": "^2.5.0",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
-    "parcel": "next",
-    "rimraf": "^3.0.2",
-    "sharp": "^0.28.3"
+    "rimraf": "^3.0.2"
+
+  },
+  "scripts": {
+    "_start": "parcel serve ./src/html/www.html",
+    "_build": "parcel build ./src/html/www.html --public-url=./ --no-content-hash --dist-dir final --no-optimize --detailed-report",
+    "_watch": "parcel watch ./src/html/wwww.html",
+    "_prebuild": "rimraf ./final"
   }
 }

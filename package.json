@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "workspaces": [
+    "game-client",
+    "game-server"
+  ],
+  "dependencies": {
+    "node-gyp-build-optional-packages": "^5.1.1"
+  }
+}

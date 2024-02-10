@@ -1,15 +1,16 @@
 {
-  "name": "woad-wash-world",
-  "version": "1.0.0",
+  "name": "woad-wash-world-server",
+  "version": "0.0.0",
+  "description": "Woad Wash World Game Server",
+  "author":{
+    "name": "Justin Lloyd",
+    "email": "justin@justinlloyd.io",
+    "url": "https://justin-lloyd.com"
+  },
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "https://github.com/JustinLloyd/woad-wash-world.git"
-  },
-  "scripts": {
-    "start": "parcel serve ./src/html/www.html",
-    "build": "parcel build ./src/html/www.html --public-url=./ --no-content-hash --dist-dir final --no-optimize --detailed-report",
-    "watch": "parcel watch ./src/html/wwww.html",
-    "prebuild": "rimraf ./final"
   },
   "file": [
     "src/scripts/",
@@ -20,21 +21,20 @@
     "dist/"
   ],
   "dependencies": {
-    "systemjs": "^6.10.2",
-    "typescript": "^4.3.5",
-    "@pixi/canvas-renderer": "^6.1.1",
-    "@types/gsap": "^3.0.0",
-    "@types/jquery": "^3.5.6",
-    "eventemitter3": "^4.0.7",
-    "gsap": "^3.7.1",
+    "systemjs": "^6.14.3",
+    "typescript": "next",
+    "@types/jquery": "^3.5.29",
+    "eventemitter3": "^5.0.1",
     "inline-scripts": "^1.7.4",
-    "jquery": "^3.6.0",
-    "pixi-filters": "^4.1.4",
-    "pixi.js": "^6.0.4"
+    "winston": "^3.11.0"
   },
   "devDependencies": {
-    "parcel": "next",
-    "rimraf": "^3.0.2",
-    "sharp": "^0.28.3",
+    "rimraf": "^3.0.2"
+    },
+  "scripts": {
+    "_start": "parcel serve ./src/html/www.html",
+    "_clean": "rimraf ./dist && rimraf ./build && rimraf ./final",
+    "_build": "parcel build ./src/html/www.html --public-url=./ --no-content-hash --dist-dir final --no-optimize --detailed-report",
+    "_watch": "parcel watch ./src/html/wwww.html"
   }
 }

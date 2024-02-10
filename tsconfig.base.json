@@ -1,28 +1,11 @@
 {
-  "exclude": [
-    ".git",
-    "node_modules",
-    "dist",
-    "build",
-    "artwork",
-    "soundwork",
-    "SVG",
-    "final"
-  ],
-
-  "include": [
-    "src/scripts/**/*.ts",
-    "src/html/*",
-    "src/css/*",
-    "src/assets/**/*"
-  ],
-
   "compilerOptions": {
     "baseUrl": "./src",
     "target": "es2022",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
+    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
@@ -34,7 +17,7 @@
     "jsx": "preserve",
     "sourceMap": true,
     "removeComments": true,
-    "outDir": "build/",
+    "outDir": "build",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -43,6 +26,25 @@
       "dom.iterable",
       "esnext"
     ],
+
+    "include": [
+    "src/scripts/**/*.ts",
+    "src/html/*",
+    "src/css/*",
+    "src/assets/**/*"
+  ],
+
+  "exclude": [
+    ".git",
+    "node_modules",
+    "dist",
+    "build",
+    "artwork",
+    "soundwork",
+    "SVG",
+    "final"
+  ],
+
 
     "paths": {
       "@services": [

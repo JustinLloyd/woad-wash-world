@@ -1,0 +1,11 @@
+export enum RaceState
+{
+    INIT,
+    ON_THE_GRID,
+    COUNTDOWN,
+    RACE_COMMENCED,
+    RACE_COMPLETED,
+    WAITING_FOR_PLAYERS_TO_FINISH,
+    EXIT,
+
+}
