@@ -1,4 +1,6 @@
-export class MotorcycleDataRecord
+import {DataRecord} from './dataRecord';
+
+export class MotorcycleDataRecord extends DataRecord
 {
     public name: string;
     public speed: number;

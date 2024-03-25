@@ -1,5 +1,6 @@
 import {GameObject} from './gameObject';
 import {InputSystem} from './inputSystem';
+import {Application} from '@pixi/app';
 
 export abstract class GameWorld
 {
@@ -9,6 +10,6 @@ export abstract class GameWorld
     public static instance: GameWorld;
     canvas: HTMLCanvasElement;
     gameObjects: Array<GameObject>;
-    public static app: PIXI.Application;
+    public static app: Application
     public inputSystem: InputSystem;
 }

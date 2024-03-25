@@ -12,30 +12,28 @@
     "src/css/",
     "src/html/**/*",
     "src/assets/**/*",
-
     "build/",
     "dist/"
   ],
   "dependencies": {
-    "systemjs": "^6.14.3",
-    "typescript": "next",
+    "@pixi/app": "^7.4.0",
     "@pixi/canvas-renderer": "^7.4.0",
+    "@pixi/sound": "^5.2.2",
     "@types/gsap": "^3.0.0",
     "@types/jquery": "^3.5.29",
     "eventemitter3": "^5.0.1",
     "gsap": "^3.12.5",
     "inline-scripts": "^1.7.4",
     "jquery": "^3.7.1",
-    "@pixi/app": "^7.4.0",
-    "@pixi/sound": "^5.2.2",
     "pixi-filters": "^5.2.1",
-    "pixi.js": "^8.0.0-rc.6",
+    "pixi.js": "^8.0.0-rc.9",
     "pixi3d": "^2.5.0",
+    "systemjs": "^6.14.3",
+    "typescript": "next",
     "winston": "^3.11.0"
   },
   "devDependencies": {
     "rimraf": "^3.0.2"
-
   },
   "scripts": {
     "_start": "parcel serve ./src/html/www.html",

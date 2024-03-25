@@ -1,4 +1,5 @@
-import winston, {log} from "winston";
+import {log} from "winston";
+import {Entity} from './entity';
 
 export class Iterator
 {
@@ -21,61 +22,11 @@ export class Iterator
 
 }
 
-export abstract class Entity{
-    public id:number;
-    public active:boolean=true;
-    public components: Array<Component> = new Array<Component>();
-
-    public getID():number{
-        return this.id;
-    }
-
-    public addComponent<T extends Component>(component: T): T
-    {
-        if (!component)
-        {
-            log('error', 'component is null');
-            throw new Error('component is null');
-        }
-
-        const type = component.constructor.name;
-
-
-        this.components.push(component);
-        return component;
-    }
-
-    public removeComponent<T extends Component>(component: T): T
-    {
-        const index = this.components.indexOf(component, 0);
-        if (index > -1)
-        {
-            this.components.splice(index, 1);
-        }
-
-        return component;
-    }
-
-    public getComponent<T extends Component>(componentType: { new(): T }): T
-    {
-        for (let component of this.components)
-        {
-            if (component instanceof componentType)
-            {
-                return component as T;
-            }
-        }
-
-    }
+export abstract class System{
+    public readonly id: number;
+    // the maximum number  of times this system can update per second
+    public maxUpdatesPerSecond: number = 60;
 }
-
-export class Component<T>
-{
-    public data : T;
-
-}
-
-export class System{}
 
 // The ECSManager class is a simple implementation of the Entity-Component-System pattern.
 // It maintains a list of systems and entities, and provides methods for adding and removing them.
@@ -88,6 +39,7 @@ export class ECSManager{
     public static Component = Component;
     private systems: Array<System> = new Array<System>();
     private entities: Array<Entity> = new Array<Entity>();
+    private components: Array<Component> = new Array<Component>();
 
     constructor(systems: Array<System>)
     {
@@ -97,11 +49,24 @@ export class ECSManager{
         }
     }
 
+    // when the ECS is shutting down, we peform an ungraceful, forceful removal of everything
+    public shutdown()
+    {
+        // TODO delete all game objects
+        // TODO delete all systems
+        // TODO delete all components
+    }
+
     public addSystem(system: System)
     {
         if (!system)
         {
             log('error', 'system is null')
+            return;
+        }
+
+        if (this.systems.indexOf(system, 0) > -1){
+            log('error', 'system already exists');
             return;
         }
 
